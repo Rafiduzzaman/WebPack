@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
      index: './src/index.js',
      print: './src/print.js',
    },
+   devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       
@@ -17,6 +20,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
      path: path.resolve(__dirname, 'dist'),
      clean: true,
    },
+   optimization: {
+    runtimeChunk: 'single',
+  },
    module: {
     rules: [
       {
